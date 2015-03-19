@@ -1,10 +1,22 @@
 if (Meteor.isClient) {
+  Router.route('/', {
+    name: 'home'
+  });
+
+
+  ApplicationController = RouteController.extend({
+  });
+
+  HomeController = ApplicationController.extend({
+    action: function() {
+      this.render('home');
+    }
+  });
+
   Router.route('/signup', function() {
     this.render('signup');
   });
-  Router.route('/', function() {
-    this.render('home');
-  });
+
 }
 
 if (Meteor.isServer) {
