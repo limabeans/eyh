@@ -7,9 +7,39 @@
         <h1>Skyline College presents...</h1>
         <h1>Expanding your horizons.</h1>
         <h3>Science is cool. Come learn with us!</h3>
-        <button type="button" class="btn btn-large btn-success" onclick="location.href='/signup/'">Signup!</button>
+        <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/signup/'">Signup!</button>
       </div>
     </body>
+  </div>
+
+  <div class="container">
+    <table class="table table-bordered table-striped table-hover">
+      <thead>
+        <th>Nickname</th>
+        <th>First</th>
+        <th>Last</th>
+        <th>Pass</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>School</th>
+        <th>Workshops</th>
+        
+      </thead>
+      <tbody>
+        {{#each kids}}
+        <tr>
+          <td>{{nickname}}</td>
+          <td>{{first_name}}</td>
+          <td>{{last_name}}</td>
+          <td>{{password}}</td>
+          <td>{{email}}</td>
+          <td>{{phone_number}}</td>
+          <td>{{school}}</td>
+          <td>{{workshops}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </div>
   
 </template>
