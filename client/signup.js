@@ -6,6 +6,9 @@ Template.signup.helpers({
 if(Meteor.isClient) {
 
   Template.signup.events({
+    "input #nickname": function(event) {
+      console.log(event);
+    },
     "change #box": function(event) {
       var workshop = event.target.value;
       var attending = event.target.checked;
@@ -13,6 +16,7 @@ if(Meteor.isClient) {
     },
     "click .btn": function(event) {
       var nickname=document.getElementById('nickname').value;
+
       var first_name=document.getElementById('first_name').value;
       var last_name=document.getElementById('last_name').value;
       var password=document.getElementById('password1').value;
