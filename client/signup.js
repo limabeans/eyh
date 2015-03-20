@@ -40,7 +40,6 @@ if(Meteor.isClient) {
         workshops: map
       });
 
-      Router.go('/');
       return false;
     }
   });

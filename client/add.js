@@ -13,8 +13,6 @@ if(Meteor.isClient) {
         leader: leader,
         description: description
       });
-
-      Router.go('/');
       return false;
     }
   });
