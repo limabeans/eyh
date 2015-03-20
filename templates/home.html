@@ -5,7 +5,7 @@
     <body>
       <div class="title-page">
         <h1>Skyline College presents...</h1>
-        <h1>Expanding your horizons.</h1>
+        <h1>Expanding your horizons 2016.</h1>
         <h3>Science is cool. Come learn with us!</h3>
         <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/signup/'">Signup!</button>
       </div>
@@ -49,12 +49,26 @@
     <table class="table table-bordered table-striped table-hover">
       <thead>
         <th>Name</th>
+        <th>Leader</th>
         <th>Description</th>
         <th>Registered</th>
       </thead>
       <tbody>
+        {{#each workshops_entries}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{leader}}</td>
+          <td>{{description}}</td>
+          <td>asdf</td>
+        </tr>
+        {{/each}}
       </tbody>
     </table>
+
+    <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/add/'">Add New Workshop</button>    
+
+    
+
   </div>
   
 </template>
