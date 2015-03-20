@@ -32,10 +32,13 @@
       <input type="text" class="form-control" id="school" placeholder="Skyline" />
     </form>
 
-    <form class="form-inline">
-      <label for="workshops">Workshops: </label>
-      <input type="text" class="form-control" id="workshops" placeholder="programming, math" />
-    </form>
+    {{#each workshop_entries}}
+    <div class="checkbox">
+      <label>
+        <input id="box" type="checkbox" value="{{name}}">{{name}}
+      </label>
+    </div>
+    {{/each}}
 
     <button type="button" class="btn btn-large btn-primary btn-success">Submit</button>
   </div>

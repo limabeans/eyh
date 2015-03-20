@@ -36,7 +36,11 @@
           <td>{{email}}</td>
           <td>{{phone_number}}</td>
           <td>{{school}}</td>
-          <td>{{workshops}}</td>
+          <td>
+            {{#each workshops}}
+            {{name}}, 
+            {{/each}}
+          </td>
         </tr>
         {{/each}}
       </tbody>
@@ -59,7 +63,11 @@
           <td>{{name}}</td>
           <td>{{leader}}</td>
           <td>{{description}}</td>
-          <td>asdf</td>
+          <td>
+            {{#each registered}}
+            {{nickname}}, 
+            {{/each}}
+          </td>
         </tr>
         {{/each}}
       </tbody>

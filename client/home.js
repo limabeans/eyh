@@ -4,5 +4,14 @@ Template.home.helpers({
   },
   workshops_entries: function() {
     return Workshops.find();
+  },
+  registered: function() {
+    var registered_kids = Kids.find({
+      workshops: {
+        $all:[{name: this.name }]
+      }
+    });
+
+    return registered_kids;
   }
 });
