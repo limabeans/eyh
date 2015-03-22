@@ -8,7 +8,7 @@ Template.home.helpers({
   registered: function() {
     var registered_kids = Kids.find({
       workshops: {
-        $all:[{name: this.name }]
+        $all:[ this.name ]
       }
     });
 

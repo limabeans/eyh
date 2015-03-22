@@ -1,4 +1,11 @@
 <template name="add">
+  <h1>Add a new workshop!</h1>
+  {{> quickForm collection="Workshops" id="workshopAddForm" type="insert"}}
+</template>
+
+
+
+<template name="old_add">
 
   <form class="form-inline">
     <label for="name">Name: </label>

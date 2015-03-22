@@ -10,3 +10,6 @@ insecure
 iron:router
 accounts-ui
 accounts-password
+aldeed:autoform
+aldeed:collection2
+underscore
