@@ -49,8 +49,11 @@ Kids.attachSchema(new SimpleSchema ({
     label: 'Workshops',
     autoform: {
       options: function() {
-        return _.map(Workshops.find().fetch(), function(c) {
-          return {label: c.name+'--'+c.leader, value: c.name};
+        return Workshops.find().map(function(doc, ind, curs) {
+          return {
+            label: doc.name+' -- '+doc.leader,
+            value: doc.name
+          };
         });
       }
     }
