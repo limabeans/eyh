@@ -2,7 +2,8 @@ Workshops = new Mongo.Collection("workshops");
 Workshops.attachSchema( new SimpleSchema ({
   name: {
     type: String,
-    label: 'name'
+    label: 'name',
+    min: 3
   },
   leader: {
     type: String,
@@ -12,6 +13,10 @@ Workshops.attachSchema( new SimpleSchema ({
     type: String,
     label: 'description'
   },
+  capacity: {
+    type: Number,
+    label: 'Max capacity'
+  }
 }));
 
 Kids = new Mongo.Collection("kids");

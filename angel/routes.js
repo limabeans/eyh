@@ -1,4 +1,5 @@
 if (Meteor.isClient) {
+  //home
   Router.route('/', {
     name: 'home'
   });
@@ -9,6 +10,8 @@ if (Meteor.isClient) {
       this.render('home');
     }
   });
+
+  //signup
   Router.route('/signup', {
     name: 'signup'
   });
@@ -18,7 +21,7 @@ if (Meteor.isClient) {
     }
   });
 
-
+  //add (workshop)
   Router.route('/add', {
     name: 'add'
   });
@@ -28,9 +31,13 @@ if (Meteor.isClient) {
     }
   });
 
-  Router.route('/add/:_id', function() {
-    var params = this.params;
-    var id = params._id;
+  //workshop landing page
+  Router.route('/workshop/:name', function() {
+    this.render('workshop', {
+      data: function() {
+        return Workshops.findOne({name: this.params.name});
+      }
+    });
   });
 }
 

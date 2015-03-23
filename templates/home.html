@@ -53,19 +53,15 @@
         <th>Name</th>
         <th>Leader</th>
         <th>Description</th>
-        <th>Registered</th>
+        <th>Capacity</th>
       </thead>
       <tbody>
         {{#each workshops_entries}}
         <tr>
-          <td>{{name}}</td>
+          <td><a href="/workshop/{{name}}">{{name}}</a></td>
           <td>{{leader}}</td>
           <td>{{description}}</td>
-          <td>
-            {{#each registered}}
-            {{nickname}}, 
-            {{/each}}
-          </td>
+          <td>{{capacity}}</td>
         </tr>
         {{/each}}
       </tbody>
@@ -78,3 +74,10 @@
   </div>
   
 </template>
+
+
+<!-- <td> -->
+<!--   {{#each registered}} -->
+<!--   {{nickname}},  -->
+<!--   {{/each}} -->
+<!-- </td> -->
