@@ -1,6 +1,21 @@
 <template name="signup">
   <div class="container">
-    <h1>Sign up for Expanding Your Horizons</h1>
-    {{> quickForm collection="Kids" id="signupKidsForm" type="insert"}}
+    <h1>Expanding Your Horizons</h1>
+    <!--{{> quickForm collection="Kids" id="signupKidsForm" type="insert"}} -->
+
+    {{#autoForm collection="Kids" id="signupKidsForm" type="insert"}}
+    <fieldset>
+      <legend>Signup Form</legend>
+      {{> afQuickField name='nickname'}}
+      {{> afQuickField name='first_name'}}
+      {{> afQuickField name='last_name'}}
+      {{> afQuickField name='password'}}
+      {{> afQuickField name='phone_number'}}
+      {{> afQuickField name='school'}}
+      {{> afFieldInput name='workshops' }}
+      
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {{/autoForm}}
   </div>
 </template>
