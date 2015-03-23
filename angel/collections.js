@@ -34,7 +34,8 @@ Kids.attachSchema(new SimpleSchema ({
   },
   email: {
     type: String,
-    label: 'Email Address'
+    label: 'Email Address',
+    regEx: SimpleSchema.RegEx.Email
   },
   phone_number: {
     type: String,
