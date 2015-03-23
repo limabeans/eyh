@@ -1,27 +1,13 @@
 <template name="add">
-  <h1>Add a new workshop!</h1>
-  {{> quickForm collection="Workshops" id="workshopAddForm" type="insert"}}
-</template>
-
-
-
-<template name="old_add">
-
-  <form class="form-inline">
-    <label for="name">Name: </label>
-    <input type="text" class="form-control" id="name" placeholder="Enter name here" />
-  </form>
-
-  <form class="form-inline">
-    <label for="leader">Leader: </label>
-    <input type="text" class="form-control" id="leader" placeholder="Enter leader name here" />
-  </form>
-
-  <form class="form-inline">
-    <label for="description">Description: </label>
-    <input type="text" class="form-control" id="description" placeholder="description" />
-  </form>
-  <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/'">Submit</button>
-
-
+  <div class="container">
+    <h1>Add a new workshop!</h1>
+    {{#autoForm collection="Workshops" id="addWorkshopsForm" type="insert"}}
+    <fieldset>
+      {{> afQuickField name='name'}}
+      {{> afQuickField name='leader'}}
+      {{> afQuickField name='description'}}
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Add workshop</button>
+    {{/autoForm}}
+  </div>
 </template>
