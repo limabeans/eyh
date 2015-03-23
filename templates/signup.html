@@ -1,8 +1,6 @@
 <template name="signup">
   <div class="container">
     <h1>Expanding Your Horizons</h1>
-    <!--{{> quickForm collection="Kids" id="signupKidsForm" type="insert"}} -->
-
     {{#autoForm collection="Kids" id="signupKidsForm" type="insert"}}
     <fieldset>
       <legend>Signup Form</legend>
@@ -10,12 +8,14 @@
       {{> afQuickField name='first_name'}}
       {{> afQuickField name='last_name'}}
       {{> afQuickField name='password'}}
+      {{> afQuickField name='email'}}
       {{> afQuickField name='phone_number'}}
       {{> afQuickField name='school'}}
-      {{> afFieldInput name='workshops' }}
-      
+      {{> afQuickField name='workshops' noselect=true }}
     </fieldset>
     <button type="submit" class="btn btn-primary">Submit</button>
     {{/autoForm}}
   </div>
 </template>
+
+

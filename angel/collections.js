@@ -48,17 +48,11 @@ Kids.attachSchema(new SimpleSchema ({
     type: [String],
     label: 'Workshops',
     autoform: {
-      afFieldInput: {
-        type: "boolean-checkbox"
-      },
       options: function() {
         return _.map(Workshops.find().fetch(), function(c) {
-          return {label: c.name+'--'+c.leader, value: false};
+          return {label: c.name+'--'+c.leader, value: c.name};
         });
       }
     }
   }
 }));
-
-
-
