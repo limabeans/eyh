@@ -1,20 +1,26 @@
 <template name="signup">
   <div class="container">
     <h1>Expanding Your Horizons</h1>
-    {{#autoForm collection="Kids" id="signupKidsForm" type="insert"}}
-    <fieldset>
-      <legend>Signup Form</legend>
-      {{> afQuickField name='nickname'}}
-      {{> afQuickField name='first_name'}}
-      {{> afQuickField name='last_name'}}
-      {{> afQuickField name='password'}}
-      {{> afQuickField name='email'}}
-      {{> afQuickField name='phone_number'}}
-      {{> afQuickField name='school'}}
-      {{> afQuickField name='workshops' noselect=true }}
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    {{/autoForm}}
+    <div class="col-md-6">
+      {{#autoForm collection="Kids" id="signupKidsForm" type="insert" validation="keyup"}}
+      <fieldset>
+        <legend>Signup Form</legend>
+        {{> afQuickField name='nickname' placeholder="limabeans"}}
+        {{> afQuickField name='first_name'}}
+        {{> afQuickField name='last_name'}}
+        {{> afQuickField name='password'}}
+        {{> afQuickField name='email'}}
+        {{> afQuickField name='phone_number'}}
+        {{> afQuickField name='school'}}
+        {{> afQuickField name='workshops' noselect=true }}
+      </fieldset>
+      <button type="button" class="btn btn-default">Preview</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+      {{/autoForm}}
+    </div>
+    <div class="col-mid-6">
+      Preview
+    </div>
   </div>
 </template>
 

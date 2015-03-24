@@ -1,3 +1,8 @@
+SimpleSchema.messages({
+  'nicknameAlreadyExists' : 'Nickname already exists!',
+  'emailAlreadyExists': 'This email is already is being used.',
+});
+
 Workshops = new Mongo.Collection("workshops");
 Workshops.attachSchema( new SimpleSchema ({
   name: {
@@ -23,7 +28,15 @@ Kids = new Mongo.Collection("kids");
 Kids.attachSchema(new SimpleSchema ({
   nickname: {
     type: String,
-    label: 'Nickname'
+    label: 'Nickname',
+    custom: function() {
+      if(this.isSet) {
+        var alreadyExists = Kids.findOne({nickname: this.value});
+        if(alreadyExists) {
+          return 'nicknameAlreadyExists';
+        }
+      }
+    }
   },
   first_name: {
     type: String,
@@ -40,7 +53,13 @@ Kids.attachSchema(new SimpleSchema ({
   email: {
     type: String,
     label: 'Email Address',
-    regEx: SimpleSchema.RegEx.Email
+    regEx: SimpleSchema.RegEx.Email,
+    custom: function() {
+      var alreadyExists = Kids.findOne({email: this.value});
+      if(alreadyExists) {
+        return 'emailAlreadyExists';
+      }
+    }
   },
   phone_number: {
     type: String,
@@ -65,3 +84,4 @@ Kids.attachSchema(new SimpleSchema ({
     }
   }
 }));
+
