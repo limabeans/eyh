@@ -18,6 +18,11 @@ Workshops.attachSchema( new SimpleSchema ({
     type: String,
     label: 'description'
   },
+  enrolled: {
+    type: Number,
+    label: 'num enrolled',
+    defaultValue: 0
+  },
   capacity: {
     type: Number,
     label: 'Max capacity'
@@ -84,4 +89,7 @@ Kids.attachSchema(new SimpleSchema ({
     }
   }
 }));
+
+
+
 
