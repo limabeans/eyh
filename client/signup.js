@@ -14,7 +14,14 @@ var hooksObject = {
 
   // Called when any submit operation succeeds
   onSuccess: function(formType, result) {
-    alert('fuck yeah');
+    console.log(this);
+    var workshops = this.insertDoc.workshops;
+    for(var i = 0; i < workshops.length; i++) {
+      //Workshops.update({name: workshops[i]},{ $inc: {capacity: 1}});
+      var ws = Workshops.findOne({name: workshops[i]});
+      var id = ws._id;
+      Workshops.update({_id: id}, {$inc: {enrolled: 1}});
+    }
   },
 };
 
