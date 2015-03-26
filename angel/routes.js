@@ -14,7 +14,7 @@ if (Meteor.isClient) {
   //import workshop
   Router.route('/import', {
     name: 'import',
-    template: 'import_workshops'
+    template: 'importWorkshops'
   });
 
   //signup

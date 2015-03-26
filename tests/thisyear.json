@@ -1,0 +1,14 @@
+{
+  "workshops": [
+    {"name":"javascript",
+     "leader":"angel",
+     "description":"learn to web",
+     "enrolled":0,
+     "capacity":5},
+    {"name":"singing",
+     "leader":"megan",
+     "description":"artsy",
+     "enrolled":0,
+     "capacity":7}
+  ]
+}
