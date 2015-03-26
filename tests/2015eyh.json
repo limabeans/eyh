@@ -1,0 +1,32 @@
+{
+  "workshops":[
+    {"name":"Outbreak!",
+     "leader": "Elsa Jimenez-Samayoa, Johns Hopkins University.",
+     "description": " How do epidemics like the Ebola outbreak occur? Find out how diseases are transmitted and track an epidemic. Be ready for your hands to glow!",
+     "category": "Medicine & Allied Health"
+    },
+
+    {"name": "Sports Medicine",
+     "leader": "Jo Silken, Skyline College",
+     "description": "Learn the taping and wrapping techniques used on injured athletes.",
+     "category": "Medicine & Allied Health"
+    },
+
+    {"name": "Walk above the Bay",
+     "leader": "Carla Grandy & Carina Anttila-Suarez, Professors. Skyline College",
+     "description": "Learn about geology, plants, and animals as you enjoy views from the ocean to the Bay. Comfortable shoes and jacket advised.",
+     "category": "Life Sciences"
+    },
+    {"name": "BASIC",
+     "leader": "Adrienne Jardetzky, Love at First Byte.",
+     "description": "Write a computer program in BASIC! Debug (fix) an adventure game program. Play and modify other games on the computer.",
+     "category": "Math & Computer Science"
+    },
+    {"name": "Let Me Tell You a Secret.",
+     "leader": "Megan Wachs, Principal ASIC Design Engineer. Cryptography Research, a Division of Rambus, Inc.",
+     "description": "Learn about data encryption and how to keep your personal information safe in the Internet age. Create your own encrypted messages to share only with your BFF.",
+     "category": "Math & Computer Science"
+    }
+
+  ]
+}

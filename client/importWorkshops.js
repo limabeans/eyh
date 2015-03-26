@@ -20,7 +20,7 @@ Template.importWorkshops.events({
         workshop.description = elem.description;
         workshop.category = elem.category;
         workshop.enrolled = 0;
-        workshop.capacity = elem.capacity;
+        workshop.capacity = 5;
         Workshops.insert(workshop);
       });
     };
