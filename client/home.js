@@ -7,6 +7,13 @@ Template.home.events({
 
 
 Template.home.helpers({
+  maxCapacity: function() {
+    var workshop = Workshops.findOne({_id: this._id});
+    if(workshop.enrolled < workshop.capacity) {
+      return false;
+    }
+    return true;
+  },
   kids: function() {
     return Kids.find();
   },

@@ -13,7 +13,6 @@
           <th>Nickname</th>
           <th>First</th>
           <th>Last</th>
-          <th>Pass</th>
           <th>Email</th>
           <th>Phone</th>
           <th>School</th>
@@ -25,7 +24,6 @@
             <td>{{nickname}}</td>
             <td>{{first_name}}</td>
             <td>{{last_name}}</td>
-            <td>{{password}}</td>
             <td>{{email}}</td>
             <td>{{phone_number}}</td>
             <td>{{school}}</td>
@@ -43,7 +41,7 @@
     <div class="col-md-6">
       <h2>Workshops list</h2>
       <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/add/'">Add New Workshop</button>
-      <button type="button" id="dropWorkshops" class="btn btn-large btn-danger">Workshops.remove({})</button>
+      <!--<button type="button" id="dropWorkshops" class="btn btn-large btn-danger">Workshops.remove({})</button>-->
       <table class="table table-bordered table-striped table-hover">
         <thead>
           <th>Name</th>
@@ -67,7 +65,7 @@
               {{/each}}
             </td>
             <td>{{enrolled}}</td>
-            <td>{{capacity}}</td>
+            <td class="{{#if maxCapacity}}bg-danger{{else}}bg-success{{/if}}">{{capacity}}</td>
           </tr>
           {{/each}}
         </tbody>

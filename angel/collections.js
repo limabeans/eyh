@@ -55,10 +55,6 @@ Kids.attachSchema(new SimpleSchema ({
     type: String,
     label: 'Last Name'
   },
-  password: {
-    type: String,
-    label: 'Password'
-  },
   email: {
     type: String,
     label: 'Email Address',
