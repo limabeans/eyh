@@ -1,3 +1,11 @@
+
+Template.home.events({
+  'click #dropWorkshops': function() {
+    Meteor.call('removeAllWorkshops');
+  }
+});
+
+
 Template.home.helpers({
   kids: function() {
     return Kids.find();
