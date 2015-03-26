@@ -1,86 +1,77 @@
 <template name="home">
-  <head>
-  </head>
-  <div class="container">
-    <body>
-      <div class="title-page">
-        <h1>Skyline College presents...</h1>
-        <h1>Expanding your horizons 2016.</h1>
-        <h3>Science is cool. Come learn with us!</h3>
-        <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/signup/'">Signup!</button>
-      </div>
-    </body>
+  <div class="container-fluid">
+    <div class="col-md-6">
+      <h1>Skyline College presents...</h1>
+      <h1>Expanding your horizons 2016.</h1>
+      <h3>Science is cool. Come learn with us!</h3>
+      <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/signup/'">Signup!</button>
+
+      <h2>Registered</h2>
+
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <th>Nickname</th>
+          <th>First</th>
+          <th>Last</th>
+          <th>Pass</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>School</th>
+          <th>Workshops</th>
+        </thead>
+        <tbody>
+          {{#each kids}}
+          <tr>
+            <td>{{nickname}}</td>
+            <td>{{first_name}}</td>
+            <td>{{last_name}}</td>
+            <td>{{password}}</td>
+            <td>{{email}}</td>
+            <td>{{phone_number}}</td>
+            <td>{{school}}</td>
+            <td>
+              {{#each workshops}}
+              {{this}}, 
+              {{/each}}
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-6">
+      <h2>Workshops list</h2>
+      <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/add/'">Add New Workshop</button>    
+      <table class="table table-bordered table-striped table-hover">
+        <thead>
+          <th>Name</th>
+          <th>Leader</th>
+          <th>Description</th>
+          <th>Registered</th>
+          <th>Num Registered</th>
+          <th>Capacity</th>
+        </thead>
+        <tbody>
+          {{#each workshops_entries}}
+          <tr>
+            <td><a href="/workshop/{{name}}">{{name}}</a></td>
+            <td>{{leader}}</td>
+            <td>{{description}}</td>
+            <td>
+              {{#each registered}}
+              {{nickname}},
+              {{/each}}
+            </td>
+            <td>{{enrolled}}</td>
+            <td>{{capacity}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+    </div>
   </div>
-  <div class="container">
-    <h2>Registered</h2>
-    <table class="table table-bordered table-striped table-hover">
-      <thead>
-        <th>Nickname</th>
-        <th>First</th>
-        <th>Last</th>
-        <th>Pass</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>School</th>
-        <th>Workshops</th>
-      </thead>
-      <tbody>
-        {{#each kids}}
-        <tr>
-          <td>{{nickname}}</td>
-          <td>{{first_name}}</td>
-          <td>{{last_name}}</td>
-          <td>{{password}}</td>
-          <td>{{email}}</td>
-          <td>{{phone_number}}</td>
-          <td>{{school}}</td>
-          <td>
-            {{#each workshops}}
-            {{this}}, 
-            {{/each}}
-          </td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
-
-
-  <div class="container">
-    <h2>Workshops list</h2>
-    <table class="table table-bordered table-striped table-hover">
-      <thead>
-        <th>Name</th>
-        <th>Leader</th>
-        <th>Description</th>
-        <th>Registered</th>
-        <th>Num Registered</th>
-        <th>Capacity</th>
-      </thead>
-      <tbody>
-        {{#each workshops_entries}}
-        <tr>
-          <td><a href="/workshop/{{name}}">{{name}}</a></td>
-          <td>{{leader}}</td>
-          <td>{{description}}</td>
-          <td>
-            {{#each registered}}
-            {{nickname}},
-            {{/each}}
-          </td>
-          <td>{{enrolled}}</td>
-          <td>{{capacity}}</td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-
-    <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/add/'">Add New Workshop</button>    
-
-    
-
-  </div>
-  
 </template>
 
 

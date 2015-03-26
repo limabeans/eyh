@@ -11,6 +11,12 @@ if (Meteor.isClient) {
     }
   });
 
+  //import workshop
+  Router.route('/import', {
+    name: 'import',
+    template: 'import_workshops'
+  });
+
   //signup
   Router.route('/signup', {
     name: 'signup'
@@ -31,14 +37,39 @@ if (Meteor.isClient) {
     }
   });
 
-  //workshop landing page
-  Router.route('/workshop/:name', function() {
-    this.render('workshop', {
-      data: function() {
-        return Workshops.findOne({name: this.params.name});
-      }
-    });
+  WorkshopController = RouteController.extend({
+    template: 'workshop',
+    data: function() {
+      return Workshops.findOne({name: this.params.name});
+    },
+    action: function() {
+      this.render();
+    }
   });
+
+  //workshop landing page
+  Router.route('/workshop/:name', {
+    name: 'workshop.name',
+    controller: 'WorkshopController'
+  });
+  
+  AccountController = RouteController.extend({
+    template: 'account',
+    data: function() {
+      console.log(this.params);
+      return Kids.findOne({nickname: this.params.nickname});
+    },
+    action: function() {
+      this.render();
+    }
+  });
+
+  //account landing page
+  Router.route('/account/:nickname', {
+    name: 'account.nickname',
+    controller: 'AccountController'
+  });
+
 }
 
 if (Meteor.isServer) {
