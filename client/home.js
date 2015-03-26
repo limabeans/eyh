@@ -17,7 +17,14 @@ Template.workshopsList.helpers({
   workshops_entries: function() {
     return Workshops.find();
   },
-
+  registered: function() {
+    var registered_kids = Kids.find({
+      workshops: {
+        $all:[ this.name ]
+      }
+    });
+    return registered_kids;
+  },
 });
 
 Template.home.helpers({
