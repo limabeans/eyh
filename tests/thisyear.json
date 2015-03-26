@@ -3,11 +3,13 @@
     {"name":"javascript",
      "leader":"angel",
      "description":"learn to web",
+     "category":"webdev",
      "enrolled":0,
      "capacity":5},
     {"name":"singing",
      "leader":"megan",
      "description":"artsy",
+     "category":"arts",
      "enrolled":0,
      "capacity":7}
   ]

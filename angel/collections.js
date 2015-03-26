@@ -18,6 +18,10 @@ Workshops.attachSchema( new SimpleSchema ({
     type: String,
     label: 'description'
   },
+  category: {
+    type: String,
+    label: 'category'
+  },
   enrolled: {
     type: Number,
     label: 'num enrolled',
