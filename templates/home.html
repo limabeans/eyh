@@ -39,40 +39,46 @@
     </div>
 
     <div class="col-md-6">
-      <h2>Workshops list</h2>
+      {{> workshopsList}}
       <button type="button" class="btn btn-large btn-primary btn-success" onclick="location.href='/add/'">Add New Workshop</button>
-      <!--<button type="button" id="dropWorkshops" class="btn btn-large btn-danger">Workshops.remove({})</button>-->
-      <table class="table table-bordered table-striped table-hover">
-        <thead>
-          <th>Name</th>
-          <th>Leader</th>
-          <th>Description</th>
-          <th>Category</th>
-          <th>Registered</th>
-          <th>Num Registered</th>
-          <th>Capacity</th>
-        </thead>
-        <tbody>
-          {{#each workshops_entries}}
-          <tr>
-            <td><a href="/workshop/{{name}}">{{name}}</a></td>
-            <td>{{leader}}</td>
-            <td>{{description}}</td>
-            <td>{{category}}</td>
-            <td>
-              {{#each registered}}
-              {{nickname}},
-              {{/each}}
-            </td>
-            <td>{{enrolled}}</td>
-            <td class="{{#if maxCapacity}}bg-danger{{else}}bg-success{{/if}}">{{capacity}}</td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
-
     </div>
   </div>
+</template>
+
+
+
+<template name="workshopsList">
+  <h2>Workshops list</h2>
+
+  <!--<button type="button" id="dropWorkshops" class="btn btn-large btn-danger">Workshops.remove({})</button>-->
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+      <th>Name</th>
+      <th>Leader</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Registered</th>
+      <th>Num Registered</th>
+      <th>Capacity</th>
+    </thead>
+    <tbody>
+      {{#each workshops_entries}}
+      <tr>
+        <td><a href="/workshop/{{name}}">{{name}}</a></td>
+        <td>{{leader}}</td>
+        <td>{{description}}</td>
+        <td>{{category}}</td>
+        <td>
+          {{#each registered}}
+          {{nickname}},
+          {{/each}}
+        </td>
+        <td>{{enrolled}}</td>
+        <td class="{{#if maxCapacity}}bg-danger{{else}}bg-success{{/if}}">{{capacity}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </template>
 
 

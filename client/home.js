@@ -6,7 +6,7 @@ Template.home.events({
 });
 
 
-Template.home.helpers({
+Template.workshopsList.helpers({
   maxCapacity: function() {
     var workshop = Workshops.findOne({_id: this._id});
     if(workshop.enrolled < workshop.capacity) {
@@ -14,11 +14,15 @@ Template.home.helpers({
     }
     return true;
   },
-  kids: function() {
-    return Kids.find();
-  },
   workshops_entries: function() {
     return Workshops.find();
+  },
+
+});
+
+Template.home.helpers({
+  kids: function() {
+    return Kids.find();
   },
   registered: function() {
     var registered_kids = Kids.find({
